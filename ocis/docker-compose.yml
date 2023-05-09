@@ -4,17 +4,17 @@ volumes:
   files:
     driver_opts:
       type: "nfs"
-      o: "addr=192.168.1.5,nolock,soft,rw"
+      o: "addr=192.168.1.5,nolock,soft,rw,nfsvers=4"
       device: ":${NFS_PATH}/files"
   mysql:
     driver_opts:
       type: "nfs"
-      o: "addr=192.168.1.5,nolock,soft,rw"
+      o: "addr=192.168.1.5,nolock,soft,rw,nfsvers=4"
       device: ":${NFS_PATH}/mysql"
   redis:
     driver_opts:
       type: "nfs"
-      o: "addr=192.168.1.5,nolock,soft,rw"
+      o: "addr=192.168.1.5,nolock,soft,rw,nfsvers=4"
       device: ":${NFS_PATH}/redis"
 
 services:
