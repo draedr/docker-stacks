@@ -33,11 +33,11 @@ networks:
 volumes:
   data:
     driver_opts:
-    type: "nfs"
-    o: "addr=192.168.1.10,nolock,soft,rw,nfsvers=4,async"
-    device: ":/volume1/docker/proxy/data"
+      type: "nfs"
+      o: "addr=192.168.1.10,nolock,soft,rw,nfsvers=4,async"
+      device: ":/volume1/docker/proxy/data"
   letsencrypt:
     driver_opts:
-    type: "nfs"
-    o: "addr=192.168.1.10,nolock,soft,rw,nfsvers=4,async"
-    device: ":/volume1/docker/proxy/letsencrypt"
+      type: "nfs"
+      o: "addr=192.168.1.10,nolock,soft,rw,nfsvers=4,async"
+      device: ":/volume1/docker/proxy/letsencrypt"
