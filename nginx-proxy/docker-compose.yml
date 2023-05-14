@@ -23,8 +23,8 @@ services:
     networks:
       - proxy
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - data:/data
+      - letsencrypt:/etc/letsencrypt
      
 networks:
   proxy:
