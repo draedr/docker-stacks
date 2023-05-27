@@ -1,3 +1,0 @@
-nextcloud.felines.space {
-  reverse-proxy nextcloud-aio-mastercontainer:443
-}
