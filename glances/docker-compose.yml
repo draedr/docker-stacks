@@ -1,0 +1,15 @@
+version: "3"
+services:
+  owncloud:
+    image: nicolargo/glances:latest-full
+    container_name: owncloud_server
+    restart: always
+    pid: "host"
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./glances.conf:/glances/conf/glances.conf"
+    environment:
+      - GLANCES_OPT: "-C /glances/conf/glances.conf -w"
+      - TZ: "Europe/Rome"
