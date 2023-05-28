@@ -1,8 +1,8 @@
 version: "3"
 services:
-  owncloud:
+  app:
     image: nicolargo/glances:latest-full
-    container_name: owncloud_server
+    container_name: glances
     restart: always
     pid: "host"
     privileged: true
