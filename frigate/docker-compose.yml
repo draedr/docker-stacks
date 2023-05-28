@@ -12,7 +12,7 @@ services:
       - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ./config.yml:/config/config.yml
+      - config:/config
       - media:/media/frigate
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
         target: /tmp/cache
@@ -27,6 +27,11 @@ services:
       - FRIGATE_RTSP_PASSWORD=${FRIGATE_RTSP_PASSWORD}
 
 volumes:
+  config:
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.1.10,nolock,soft,rw"
+      device: ":/volume1/docker/frigate"
   media:
     driver_opts:
       type: "nfs"
