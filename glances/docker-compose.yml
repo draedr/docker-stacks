@@ -11,5 +11,6 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./glances.conf:/glances/conf/glances.conf"
     environment:
-      - GLANCES_OPT: "-C /glances/conf/glances.conf -w"
-      - TZ: "Europe/Rome"
+      GLANCES_OPT: "-C /glances/conf/glances.conf -w"
+      TZ: "Europe/Rome"
+      
