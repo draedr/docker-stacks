@@ -1,16 +1,17 @@
 ---
-version: "2.1"
+version: "3.9"
 services:
   app:
     image: lscr.io/linuxserver/dokuwiki:latest
+    restart: unless-stopped
     container_name: dokuwiki
+    environment:
       - TZ=Europe/Rome
     volumes:
       - config:/config
     ports:
-      - 8888:80
+      - "8888:80"
       #- 443:443 #optional
-    restart: unless-stopped
 
 volumes:
   config:
