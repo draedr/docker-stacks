@@ -31,6 +31,12 @@ services:
       - "traefik.http.routers.frigate.entrypoints=websecure"
       - "traefik.http.routers.frigate.tls.certresolver=myresolver"
       - "traefik.http.services.frigate.loadbalancer.server.port=5000"
+    networks:
+      - shared
+
+networks:
+  shared:
+    external: true
 
 volumes:
   config:
