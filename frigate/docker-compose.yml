@@ -25,6 +25,12 @@ services:
       - "8555:8555/udp" # WebRTC over udp
     environment:
       - FRIGATE_RTSP_PASSWORD=${FRIGATE_RTSP_PASSWORD}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frigate.rule=Host(`frigate.felines.space`)"
+      - "traefik.http.routers.frigate.entrypoints=websecure"
+      - "traefik.http.routers.frigate.tls.certresolver=myresolver"
+      - "traefik.http.services.frigate.loadbalancer.server.port=5000"
 
 volumes:
   config:
