@@ -26,6 +26,8 @@ services:
     volumes:
       - "letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    networks:
+      - shared
 
   whoami:
     image: "traefik/whoami"
@@ -35,6 +37,12 @@ services:
       - "traefik.http.routers.whoami.rule=Host(`whoami.felines.space`)"
       - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
+    networks:
+      - shared
+
+networks:
+  shared:
+    external: true
 
 volumes:
   letsencrypt:
