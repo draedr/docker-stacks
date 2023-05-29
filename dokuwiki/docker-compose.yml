@@ -9,7 +9,7 @@ services:
       - TZ=Europe/Rome
     volumes:
       - config:/config
-    ports:
+    #ports:
       #- "8888:80"
       #- 443:443 #optional
     labels:
