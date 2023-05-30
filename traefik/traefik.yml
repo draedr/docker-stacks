@@ -8,7 +8,10 @@ api:
 
 entryPoints:
   http:
-    address: ":80"
+    address: ":80"    
+    http:
+      middlewares:
+        - https-redirect
   https:
     address: ":443"
 
