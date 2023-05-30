@@ -7,12 +7,12 @@ api:
   debug: true
 
 entryPoints:
-  http:
+  web:
     address: ":80"    
     http:
       middlewares:
         - https-redirect
-  https:
+  websecure:
     address: ":443"
 
 # --- HTTP to HTTPS redirect
