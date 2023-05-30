@@ -2,7 +2,7 @@ http:
   routers:
     container-cockpit:
       entryPoints:
-        - "https"
+        - "websecure"
       rule: "Host(`container.felines.space`)"
       tls:
         certResolver: myresolver
