@@ -36,7 +36,7 @@ certificatesResolvers:
   myresolver:
     acme:
       email: mail@felines.space
-      storage: acme.json
+      storage: /letsencrypt/acme.json
       dnsChallenge:
         provider: "cloudflare"
         delayBeforeCheck: 0
