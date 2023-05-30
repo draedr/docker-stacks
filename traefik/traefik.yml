@@ -33,7 +33,7 @@ providers:
 
 # --- DNS Challenge on Cloudflare
 certificatesResolvers:
-  http:
+  myresolver:
     acme:
       email: mail@felines.space
       storage: acme.json
