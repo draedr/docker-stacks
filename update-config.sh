@@ -1,3 +1,3 @@
 git pull
-docker compose up -d --force-recreate -f ./$1/docker-compose.yml
-docker compose logs -f --force-recreate -f ./$1/docker-compose.yml
+docker compose -f ./$1/docker-compose.yml up -d --force-recreate
+docker compose -f ./$1/docker-compose.yml logs -f
