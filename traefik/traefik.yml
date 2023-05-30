@@ -21,8 +21,8 @@ providers:
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
   # --- File Provider for external services
-  file:
-    filename: /config.yml
+  #file:
+  #  filename: /config.yml
 
 # --- DNS Challenge on Cloudflare
 certificatesResolvers:
