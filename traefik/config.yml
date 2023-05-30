@@ -14,4 +14,10 @@ http:
         servers:
           - url: "https://host.docker.internal:9090"
         passHostHeader: true
+      
+  # --- HTTP to HTTPS redirect
+  middlewares:
+    https-redirect:
+      redirectScheme:
+        scheme: https
 
