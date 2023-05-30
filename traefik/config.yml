@@ -14,3 +14,7 @@ http:
         servers:
           - url: "https://host.docker.internal:9090"
         passHostHeader: true
+        
+  serversTransports:
+    container-cockpit:
+      insecureSkipVerify: true
