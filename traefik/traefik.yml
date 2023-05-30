@@ -1,0 +1,39 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: true
+
+api:
+  dashboard: true
+  debug: true
+
+entryPoints:
+  http:
+    address: ":80"
+  https:
+    address: ":443"
+
+# --- HTTP to HTTPS redirect
+http:
+  middlewares:
+    https-redirect:
+      redirectScheme:
+        scheme: https
+
+providers:
+  # --- Docker Provider
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+  # --- File Provider for external services
+  file:
+    filename: /config.yml
+
+# --- DNS Challenge on Cloudflare
+certificatesResolvers:
+  http:
+    acme:
+      email: mail@felines.space
+      storage: acme.json
+      dnsChallenge:
+        provider: "cloudflare"
+        delayBeforeCheck: 0
