@@ -12,6 +12,6 @@ http:
     container-cockpit:
       loadBalancer:
         servers:
-          - url: "http://host.docker.internal:9090"
+          - url: "https://host.docker.internal:9090"
         passHostHeader: true
 
