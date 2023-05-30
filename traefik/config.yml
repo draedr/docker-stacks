@@ -1,0 +1,17 @@
+http:
+  routers:
+    container-cockpit:
+      entryPoints:
+        - "https"
+      rule: "Host(`container.felines.space`)"
+      tls:
+        certResolver: myresolver
+      service: container-cockpit
+    
+  services:
+    container-cockpit:
+      loadBalancer:
+        servers:
+          - url: "http://host.docker.internal:9090"
+        passHostHeader: true
+
