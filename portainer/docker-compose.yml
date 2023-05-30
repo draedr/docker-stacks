@@ -3,7 +3,7 @@ version: "3.9"
 services:
   portainer:
     image: portainer/portainer-ce:latest
-    container-name: portainer
+    container_name: portainer
     command: -H unix:///var/run/docker.sock
     restart: always
     volumes:
