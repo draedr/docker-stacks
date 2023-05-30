@@ -9,6 +9,9 @@ api:
 entryPoints:
   web:
     address: ":80"    
+    http:
+      middlewares:
+        - https-redirect
   websecure:
     address: ":443"
 
