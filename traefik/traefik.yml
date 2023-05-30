@@ -15,13 +15,6 @@ entryPoints:
   websecure:
     address: ":443"
 
-# --- HTTP to HTTPS redirect
-http:
-  middlewares:
-    https-redirect:
-      redirectScheme:
-        scheme: https
-
 providers:
   # --- Docker Provider
   docker:
