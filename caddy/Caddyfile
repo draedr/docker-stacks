@@ -1,1 +1,44 @@
+#--------------------------------------#
+#   Routes
+#--------------------------------------#
 
+{
+    acme_dns cloudflare {env.CF_API_TOKEN}
+}
+
+#--------------------------------------#
+#   Routes
+#--------------------------------------#
+
+# Dokuwiki
+wiki.felines.space {
+    reverse_proxy dokuwiki:80
+}
+
+# Frigate
+frigate.felines.space {
+    reverse_proxy frigate:5000
+}
+
+# Portainer
+portainer.felines.space {
+    reverse_proxy portainer:9443
+}
+edge.felines.space {
+    reverse_proxy portainer:8000
+}
+
+# Unifi Controller
+unifi.felines.space {
+    reverse_proxy unifi-controller:8443
+}
+
+# Cockpit for Ubuntu Vm
+container.felines.space {
+    reverse_proxy host.docker.internal:9090 {
+        transport http {
+            tls
+            tls_insecure_skip_verify
+        }
+    }
+}
